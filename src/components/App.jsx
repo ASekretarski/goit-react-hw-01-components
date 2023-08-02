@@ -1,5 +1,5 @@
 import { Profile } from "./Profile/profile";
-import { Statistics } from "./Statistics/statistics"
+// import { Statistics } from "./Statistics/statistics"
 
 
 
@@ -20,7 +20,7 @@ export const App = () => {
 
     <div>
       <Profile />
-      <Statistics />
+      {/* <Statistics /> */}
 
     </div >
   );
