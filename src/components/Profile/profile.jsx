@@ -1,52 +1,63 @@
-import user from "./user.json"
+
+import css from "./profile.module.css"
+import PropTypes from "prop-types"
 
 const Description = ({ avatar, username, tag, location }) => {
     return (
-        <div className="description">
+        <div className={css.description}>
             <img
                 src={avatar}
                 alt="User avatar"
-                className="avatar"
+                className={css.avatar}
             />
-            <p className="name">{username}</p>
-            <p className="tag">{tag}</p>
-            <p className="location">{location}</p>
+            <p className={css.name}>{username}</p>
+            <p className={css.tag}>@{tag}</p>
+            <p className={css.location}>{location}</p>
         </div>
     )
 }
 
 const Stats = ({ stats }) => {
     return (
-        <ul className="stats">
-            <li>
-                <span className="label">Followers</span>
-                <span className="quantity">{stats.followers}</span>
+        <ul className={css.stats}>
+            <li className={css.statsItem}>
+                <span className={css.label}>Followers</span>
+                <span className={css.quantity}>{stats.followers}</span>
             </li>
-            <li>
-                <span className="label">Views</span>
-                <span className="quantity">{stats.views}</span>
+            <li className={css.statsItem}>
+                <span className={css.label}>Views</span>
+                <span className={css.quantity}>{stats.views}</span>
             </li>
-            <li>
-                <span className="label">Likes</span>
-                <span className="quantity">{stats.likes}</span>
+            <li className={css.statsItem}>
+                <span className={css.label}>Likes</span>
+                <span className={css.quantity}>{stats.likes}</span>
             </li>
         </ul>
     )
 }
 
-export const Profile = () => {
+export const Profile = ({avatar, username, tag, location, stats}) => {
     return (
-        <div className="profile">
+        <div className={css.profile}>
             <Description
-                avatar={user.avatar}
-                username={user.username}
-                tag={user.tag}
-                location={user.location}
+                avatar={avatar}
+                username={username}
+                tag={tag}
+                location={location}
             />
             <Stats
-                stats={user.stats}
+                stats={stats}
             />
         </div>
 
     )
 }
+
+Profile.propTypes = {
+    avatar: PropTypes.string,
+    username: PropTypes.string,
+    tag: PropTypes.string,
+    location: PropTypes.string,
+    stats: PropTypes.object
+}
+

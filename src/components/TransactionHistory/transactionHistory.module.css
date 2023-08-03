@@ -1,0 +1,25 @@
+.table {
+    margin: 5px 0px 30px;
+    width: 304px;
+    border: 2px dashed rgba(0, 0, 0, 0.21);
+    border-radius: 0px 0px 20px 20px;
+    padding-bottom: 10px;
+}
+
+.trHead {
+    background-color: #7B7B7B;
+    color: white;
+
+}
+.tr:nth-child(2n){
+    background-color: white;
+}
+
+.th{
+    padding: 5px;
+
+}
+
+.td {
+    padding: 5px;
+}

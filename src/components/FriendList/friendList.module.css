@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.item{
+    width: 300px;
+    display: flex;
+    margin-top: 5px;
+    border: 2px dashed rgba(0, 0, 0, 0.21);
+    align-items: center;
+    padding: 5px 0px;
+    gap: 15px;
+}
+
+.status{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    margin-left: 15px;
+}
+
+.online{
+    composes: status;
+    background-color: green;
+}
+
+.offline{
+    composes: status;
+    background-color: red;
+}
